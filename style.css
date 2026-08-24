@@ -1,6 +1,6 @@
 /* ========================================================
    GeoAventura Kids - Estilos Visuais Lúdicos e Vibrantes
-   Desenvolvido especialmente para o 3º ano do Ensino Fundamental
+   Capítulos 4, 5 e 6 de Geografia (3º Ano do Ensino Fundamental)
    ======================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@600;800;900&display=swap');
@@ -14,9 +14,8 @@
   --purple-magic: #8338ec;
   --text-dark: #2b2d42;
   --text-muted: #6c757d;
-  --card-bg: rgba(255, 255, 255, 0.94);
+  --card-bg: rgba(255, 255, 255, 0.95);
   --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  --btn-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
@@ -32,7 +31,7 @@
 
 body {
   font-family: 'Fredoka', 'Nunito', sans-serif;
-  background: linear-gradient(135deg, #70e000 0%, #38b000 30%, #0077b6 70%, #023e8a 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 25%, #0284c7 70%, #4338ca 100%);
   background-attachment: fixed;
   color: var(--text-dark);
   min-height: 100vh;
@@ -43,7 +42,7 @@ body {
   position: relative;
 }
 
-/* Fundo Animado com Nuvens e Elementos Flutuantes */
+/* Fundo Animado com Nuvens */
 .sky-decorations {
   position: fixed;
   top: 0;
@@ -95,7 +94,7 @@ body {
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #0077b6;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -211,10 +210,11 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #0077b6;
   margin-bottom: 20px;
+  line-height: 1.35;
 }
 
 .student-tag {
@@ -269,7 +269,7 @@ body {
   outline: none;
   font-family: inherit;
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   padding: 16px 36px;
   border-radius: 50px;
   cursor: pointer;
@@ -372,9 +372,19 @@ body {
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
 }
 
+.island-chapter-tag {
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
 .island-icon {
   font-size: 3.8rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.15));
   transition: transform 0.3s ease;
 }
@@ -384,10 +394,11 @@ body {
 }
 
 .island-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--text-dark);
   margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .island-subtitle {
@@ -515,7 +526,7 @@ body {
 }
 
 .question-title {
-  font-size: 1.35rem;
+  font-size: 1.32rem;
   font-weight: 800;
   color: #1e293b;
   line-height: 1.35;
@@ -569,7 +580,7 @@ body {
   border-radius: var(--radius-md);
   padding: 16px 20px;
   font-family: inherit;
-  font-size: 1.18rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #334155;
   text-align: left;
@@ -679,108 +690,7 @@ body {
 }
 
 /* ========================================================
-   Minijogo 1: Bússola Interativa
-   ======================================================== */
-.compass-game-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.compass-instruction {
-  background: #fdf0d5;
-  border: 3px dashed #f77f00;
-  border-radius: var(--radius-md);
-  padding: 16px 24px;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #663d00;
-  margin-bottom: 24px;
-  max-width: 600px;
-}
-
-.interactive-compass {
-  width: 280px;
-  height: 280px;
-  background: #ffffff;
-  border: 10px solid #0077b6;
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-}
-
-.compass-direction-btn {
-  position: absolute;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: #f8f9fa;
-  border: 3px solid #0077b6;
-  font-weight: 900;
-  font-size: 1.25rem;
-  color: #0077b6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.compass-direction-btn:hover {
-  transform: scale(1.15);
-  background: #ffb703;
-  color: #4a2800;
-}
-
-.compass-direction-btn.dir-n { top: 8px; left: 50%; transform: translateX(-50%); }
-.compass-direction-btn.dir-s { bottom: 8px; left: 50%; transform: translateX(-50%); }
-.compass-direction-btn.dir-l { right: 8px; top: 50%; transform: translateY(-50%); }
-.compass-direction-btn.dir-o { left: 8px; top: 50%; transform: translateY(-50%); }
-
-.compass-center-needle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 160px;
-  margin-left: -7px;
-  margin-top: -80px;
-  pointer-events: none;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.needle-north {
-  width: 100%;
-  height: 50%;
-  background: #e63946;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.needle-south {
-  width: 100%;
-  height: 50%;
-  background: #457b9d;
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-}
-
-.needle-pivot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  background: #ffb703;
-  border: 3px solid #2b2d42;
-  border-radius: 50%;
-}
-
-/* ========================================================
-   Minijogo 2: Separador de Paisagens (Campo vs Cidade)
+   Minijogos Culturais
    ======================================================== */
 .sorting-game-wrapper {
   width: 100%;
@@ -799,8 +709,8 @@ body {
   font-weight: 800;
   color: #1e293b;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 28px;
-  max-width: 500px;
+  margin-bottom: 24px;
+  max-width: 600px;
   width: 100%;
   animation: bounceIn 0.4s ease;
 }
@@ -828,41 +738,72 @@ body {
   transform: translateY(-6px) scale(1.03);
 }
 
-.zone-campo {
-  background: #f0fdf4;
-  border-color: #86efac;
-}
-
-.zone-campo:hover {
-  border-color: #22c55e;
-  box-shadow: 0 12px 25px rgba(34, 197, 94, 0.25);
-}
-
-.zone-cidade {
-  background: #f0f9ff;
-  border-color: #7dd3fc;
-}
-
-.zone-cidade:hover {
-  border-color: #0284c7;
-  box-shadow: 0 12px 25px rgba(2, 132, 199, 0.25);
-}
-
 .zone-icon {
   font-size: 3.5rem;
   margin-bottom: 8px;
 }
 
 .zone-title {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 4px;
 }
 
 .zone-desc {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   font-weight: 600;
+}
+
+/* Botões do minijogo dos povos */
+.peoples-grid-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  width: 100%;
+  max-width: 650px;
+  margin-bottom: 16px;
+}
+
+.peoples-btn {
+  background: #ffffff;
+  border: 3px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #cbd5e1;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.peoples-btn:hover:not(:disabled) {
+  border-color: #2b9348;
+  background: #f0fdf4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #2b9348;
+}
+
+.peoples-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #2b9348;
+}
+
+.peoples-btn.correct-choice {
+  background: #d8f3dc !important;
+  border-color: #2d6a4f !important;
+  color: #1b4332 !important;
+  box-shadow: 0 5px 0 #2d6a4f !important;
+}
+
+.peoples-btn.wrong-choice {
+  background: #ffe3e3 !important;
+  border-color: #e03131 !important;
+  color: #9b1c1c !important;
+  box-shadow: 0 5px 0 #e03131 !important;
 }
 
 /* ========================================================
@@ -946,12 +887,12 @@ body {
   position: relative;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
   margin-bottom: 24px;
-  max-width: 700px;
+  max-width: 720px;
   width: 100%;
 }
 
 .certificate-header {
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 900;
   color: #0077b6;
   margin-bottom: 6px;
@@ -976,7 +917,7 @@ body {
 }
 
 .cert-body-text {
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   color: #475569;
   line-height: 1.5;
   margin-bottom: 24px;
@@ -985,13 +926,15 @@ body {
 .cert-badges-row {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 24px;
 }
 
 .cert-mini-badge {
-  font-size: 2.2rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
   background: #f1f5f9;
   padding: 8px 14px;
   border-radius: 50px;
@@ -1044,7 +987,7 @@ body {
   100% { transform: scale(1); }
 }
 
-/* Responsividade Mobile e Tablet */
+/* Responsividade */
 @media (max-width: 650px) {
   .hero-title { font-size: 2rem; }
   .hero-subtitle { font-size: 1.05rem; }
@@ -1052,6 +995,7 @@ body {
   .mascot-avatar { font-size: 3.5rem; }
   .islands-grid { grid-template-columns: 1fr; }
   .drop-zones-grid { grid-template-columns: 1fr; }
+  .peoples-grid-options { grid-template-columns: 1fr; }
   .option-btn { font-size: 1.05rem; padding: 14px 16px; }
   .question-box { flex-direction: column; text-align: center; }
   .question-icon-big { margin-bottom: -6px; }

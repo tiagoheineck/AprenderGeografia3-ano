@@ -1,6 +1,6 @@
 /**
  * GeoAventura Kids - Motor Principal do Jogo (app.js)
- * Gerenciamento de Estado, Telas, Confetes, Minijogos e Interações
+ * Adaptado para os Capítulos 4, 5 e 6 da Apostila de Geografia (3º Ano)
  */
 
 class GeoGame {
@@ -18,8 +18,9 @@ class GeoGame {
     this.islandScore = 0;
 
     // Minigame states
-    this.compassIdx = 0;
-    this.sortingIdx = 0;
+    this.gamesIdx = 0;
+    this.peoplesIdx = 0;
+    this.wordsIdx = 0;
 
     // Confetti
     this.confettiCanvas = document.getElementById('confettiCanvas');
@@ -79,7 +80,7 @@ class GeoGame {
 
     document.getElementById('btnMascotHelp').addEventListener('click', () => {
       window.soundSystem.playHint();
-      window.speechSystem.speak("Olá! Eu sou o Tico e esta é a Lina. Nós vamos te ajudar a aprender geografia e tirar nota 10 na prova!");
+      window.speechSystem.speak("Oi! Eu sou o Tico e esta é a Lina. Vamos explorar as lendas, os povos tradicionais e as heranças culturais do Brasil para você brilhar na prova!");
     });
 
     // Iniciar Aventura
@@ -126,41 +127,52 @@ class GeoGame {
       this.nextQuestion();
     });
 
-    // Bússola Minijogo
-    document.getElementById('btnCompassBackMap').addEventListener('click', () => {
+    // Minijogo 1: Origem das Brincadeiras
+    document.getElementById('btnGamesBackMap').addEventListener('click', () => {
       window.soundSystem.playClick();
       this.showScreen('screenMap');
     });
 
-    document.querySelectorAll('.compass-direction-btn').forEach(btn => {
+    document.getElementById('btnGamesNext').addEventListener('click', () => {
+      window.soundSystem.playClick();
+      this.nextGamesChallenge();
+    });
+
+    // Minijogo 2: Povos Tradicionais
+    document.getElementById('btnPeoplesBackMap').addEventListener('click', () => {
+      window.soundSystem.playClick();
+      this.showScreen('screenMap');
+    });
+
+    document.querySelectorAll('.peoples-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        const dir = e.currentTarget.getAttribute('data-dir');
-        this.handleCompassChoice(dir);
+        const target = e.currentTarget.getAttribute('data-target');
+        this.handlePeoplesChoice(target, e.currentTarget);
       });
     });
 
-    document.getElementById('btnCompassNext').addEventListener('click', () => {
+    document.getElementById('btnPeoplesNext').addEventListener('click', () => {
       window.soundSystem.playClick();
-      this.nextCompassChallenge();
+      this.nextPeoplesChallenge();
     });
 
-    // Separador Minijogo
-    document.getElementById('btnSortingBackMap').addEventListener('click', () => {
+    // Minijogo 3: Detetive das Palavras
+    document.getElementById('btnWordsBackMap').addEventListener('click', () => {
       window.soundSystem.playClick();
       this.showScreen('screenMap');
     });
 
-    document.getElementById('btnZoneCampo').addEventListener('click', () => {
-      this.handleSortingChoice('campo');
+    document.getElementById('btnWordIndigena').addEventListener('click', () => {
+      this.handleWordsChoice('indigena');
     });
 
-    document.getElementById('btnZoneCidade').addEventListener('click', () => {
-      this.handleSortingChoice('cidade');
+    document.getElementById('btnWordAfricana').addEventListener('click', () => {
+      this.handleWordsChoice('africana');
     });
 
-    document.getElementById('btnSortingNext').addEventListener('click', () => {
+    document.getElementById('btnWordsNext').addEventListener('click', () => {
       window.soundSystem.playClick();
-      this.nextSortingChallenge();
+      this.nextWordsChallenge();
     });
 
     // Vitória & Certificado
@@ -215,6 +227,7 @@ class GeoGame {
       const card = document.createElement('div');
       card.className = `island-card ${isDone ? 'completed' : ''}`;
       card.innerHTML = `
+        <div class="island-chapter-tag">${island.chapter}</div>
         <div class="island-icon">${island.icon}</div>
         <h3 class="island-title">${island.title}</h3>
         <p class="island-subtitle">${island.subtitle}</p>
@@ -236,19 +249,23 @@ class GeoGame {
     this.currentIsland = island;
     this.isSimulado = false;
 
-    // Se for a Ilha da Bússola, inicia com o minijogo prático interativo!
-    if (island.id === 'cardeais') {
-      this.startCompassGame();
+    // Se a ilha tem minijogo específico antes do quiz:
+    if (island.hasMinigame === 'brincadeiras') {
+      this.startGamesOriginMinigame();
       return;
     }
 
-    // Se for o Vale das Paisagens, inicia com o minijogo de classificação!
-    if (island.id === 'paisagens') {
-      this.startSortingGame();
+    if (island.hasMinigame === 'povos') {
+      this.startPeoplesMinigame();
       return;
     }
 
-    // Caso padrão: Perguntas da Ilha
+    if (island.hasMinigame === 'palavras') {
+      this.startWordsMinigame();
+      return;
+    }
+
+    // Caso padrão: Quiz direto
     this.quizQuestions = [...island.questions];
     this.currentQuestionIdx = 0;
     this.islandScore = 0;
@@ -260,17 +277,17 @@ class GeoGame {
     this.isSimulado = true;
     this.currentIsland = {
       id: "simulado",
-      title: "Grande Simulado de Geografia",
-      badge: "Campeão do Simulado",
+      title: "Grande Simulado da Prova (Capítulos 4, 5 e 6)",
+      badge: "Campeão do Simulado Cultural",
       badgeIcon: "🏆",
-      description: "Você revisou todas as matérias para a prova de geografia!"
+      description: "Você revisou com louvor todos os conteúdos da apostila para a prova de geografia!"
     };
 
-    // Coleta 2 perguntas de cada uma das 5 ilhas
+    // Coleta 2 a 3 perguntas de cada ilha temática
     let mixed = [];
     ISLANDS_DATA.forEach(isl => {
       const shuffled = [...isl.questions].sort(() => 0.5 - Math.random());
-      mixed.push(...shuffled.slice(0, 2));
+      mixed.push(...shuffled.slice(0, 3));
     });
 
     this.quizQuestions = mixed;
@@ -291,7 +308,7 @@ class GeoGame {
     const progressPct = ((this.currentQuestionIdx) / total) * 100;
     document.getElementById('quizProgressBar').style.width = `${progressPct}%`;
 
-    document.getElementById('questionIcon').textContent = q.icon || '🌍';
+    document.getElementById('questionIcon').textContent = q.icon || '📜';
     document.getElementById('questionTitleText').textContent = q.question;
 
     const feedbackBox = document.getElementById('feedbackBox');
@@ -412,73 +429,92 @@ class GeoGame {
     this.updateStatsUI();
 
     document.getElementById('victoryTitle').textContent = `Sensacional, ${this.playerName}! 🌟`;
-    document.getElementById('victoryMsg').textContent = `Você dominou todos os desafios de: ${this.currentIsland.title}!`;
+    document.getElementById('victoryMsg').textContent = `Você completou com sucesso todos os desafios de: ${this.currentIsland.title}!`;
     document.getElementById('rewardBadgeIcon').textContent = this.currentIsland.badgeIcon || '🏆';
-    document.getElementById('rewardBadgeTitle').textContent = `Medalha ${this.currentIsland.badge || 'Explorador Mestre'}`;
+    document.getElementById('rewardBadgeTitle').textContent = `Medalha ${this.currentIsland.badge || 'Explorador Cultural'}`;
+    document.getElementById('rewardBadgeDesc').textContent = this.currentIsland.description || 'Conquista cultural concluída!';
 
     this.showScreen('screenVictory');
   }
 
   /* ========================================================
-     Minijogo: Bússola Interativa
+     Minijogo 1: Origem das Brincadeiras (Capítulo 4)
      ======================================================== */
-  startCompassGame() {
-    this.compassIdx = 0;
-    this.loadCompassStep();
-    this.showScreen('screenCompassGame');
+  startGamesOriginMinigame() {
+    this.gamesIdx = 0;
+    this.loadGamesStep();
+    this.showScreen('screenGamesOrigin');
   }
 
-  loadCompassStep() {
-    const item = COMPASS_CHALLENGES[this.compassIdx];
-    document.getElementById('compassProgressText').textContent = `Desafio ${this.compassIdx + 1}/${COMPASS_CHALLENGES.length}`;
-    document.getElementById('compassInstructionText').textContent = item.instruction;
-    document.getElementById('compassFeedbackBox').style.display = 'none';
-    document.getElementById('btnCompassNext').style.display = 'none';
+  loadGamesStep() {
+    const item = GAMES_ORIGIN_CHALLENGES[this.gamesIdx];
+    document.getElementById('gamesProgressText').textContent = `Brincadeira ${this.gamesIdx + 1}/${GAMES_ORIGIN_CHALLENGES.length}`;
+    document.getElementById('gamesToyName').textContent = item.toy;
+    document.getElementById('gamesFeedbackBox').style.display = 'none';
+    document.getElementById('btnGamesNext').style.display = 'none';
 
-    window.speechSystem.speak(item.instruction);
+    const container = document.getElementById('gamesOptionsContainer');
+    container.innerHTML = '';
+
+    item.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerHTML = `<span class="option-text" style="font-size: 1.15rem; width: 100%; text-align: center;">${opt.name}</span>`;
+
+      btn.addEventListener('click', () => {
+        this.handleGamesChoice(opt, btn, item);
+      });
+
+      container.appendChild(btn);
+    });
+
+    window.speechSystem.speak(`Em qual cultura ou país foi inventada a brincadeira: ${item.toy}?`);
   }
 
-  handleCompassChoice(dir) {
-    const item = COMPASS_CHALLENGES[this.compassIdx];
-    const needle = document.getElementById('compassNeedle');
-    const feedbackBox = document.getElementById('compassFeedbackBox');
+  handleGamesChoice(opt, btnElement, currentChallenge) {
+    const feedbackBox = document.getElementById('gamesFeedbackBox');
+    const feedbackTitle = document.getElementById('gamesFeedbackTitle');
+    const feedbackText = document.getElementById('gamesFeedbackText');
+    const feedbackMascot = document.getElementById('gamesFeedbackMascot');
 
-    // Rotação da agulha para o ponto clicado
-    const rotations = { 'N': 0, 'L': 90, 'S': 180, 'O': 270 };
-    needle.style.transform = `rotate(${rotations[dir]}deg)`;
-
-    if (dir === item.target) {
+    if (opt.correct) {
+      btnElement.classList.add('correct-choice');
       window.soundSystem.playCorrect();
       this.triggerConfetti();
       this.stars += 2;
       this.updateStatsUI();
 
+      // Desabilita opções
+      document.querySelectorAll('#gamesOptionsContainer .option-btn').forEach(b => b.disabled = true);
+
       feedbackBox.className = 'feedback-box correct';
-      document.getElementById('compassFeedbackMascot').textContent = '🧭✨';
-      document.getElementById('compassFeedbackTitle').textContent = 'Perfeito!';
-      document.getElementById('compassFeedbackText').textContent = `A agulha apontou certinho para o ${item.targetName}!`;
+      feedbackMascot.textContent = '🦜🎉';
+      feedbackTitle.textContent = 'Perfeito!';
+      feedbackText.textContent = currentChallenge.explanation;
       feedbackBox.style.display = 'flex';
 
-      document.getElementById('btnCompassNext').style.display = 'inline-flex';
-      window.speechSystem.speak(`Perfeito! Você apontou certinho para o ${item.targetName}!`);
+      document.getElementById('btnGamesNext').style.display = 'inline-flex';
+      window.speechSystem.speak(`Perfeito! ${currentChallenge.explanation}`);
     } else {
+      btnElement.classList.add('wrong-choice');
       window.soundSystem.playTryAgain();
+
       feedbackBox.className = 'feedback-box hint';
-      document.getElementById('compassFeedbackMascot').textContent = '🦜💡';
-      document.getElementById('compassFeedbackTitle').textContent = 'Ops, tente novamente!';
-      document.getElementById('compassFeedbackText').textContent = item.hint;
+      feedbackMascot.textContent = '🐾💡';
+      feedbackTitle.textContent = 'Pense um pouquinho:';
+      feedbackText.textContent = currentChallenge.hint;
       feedbackBox.style.display = 'flex';
 
-      window.speechSystem.speak(item.hint);
+      window.speechSystem.speak(currentChallenge.hint);
     }
   }
 
-  nextCompassChallenge() {
-    this.compassIdx++;
-    if (this.compassIdx < COMPASS_CHALLENGES.length) {
-      this.loadCompassStep();
+  nextGamesChallenge() {
+    this.gamesIdx++;
+    if (this.gamesIdx < GAMES_ORIGIN_CHALLENGES.length) {
+      this.loadGamesStep();
     } else {
-      // Após o minijogo da bússola, carrega as perguntas da ilha para fixação
+      // Após o minijogo, vai para o quiz da Ilha do Folclore
       this.quizQuestions = [...this.currentIsland.questions];
       this.currentQuestionIdx = 0;
       this.islandScore = 0;
@@ -488,60 +524,138 @@ class GeoGame {
   }
 
   /* ========================================================
-     Minijogo: Separador Campo vs Cidade
+     Minijogo 2: Identificador de Povos Tradicionais (Capítulo 5)
      ======================================================== */
-  startSortingGame() {
-    this.sortingIdx = 0;
-    this.loadSortingStep();
-    this.showScreen('screenSortingGame');
+  startPeoplesMinigame() {
+    this.peoplesIdx = 0;
+    this.loadPeoplesStep();
+    this.showScreen('screenPeoplesGame');
   }
 
-  loadSortingStep() {
-    const item = SORTING_CHALLENGES[this.sortingIdx];
-    document.getElementById('sortingProgressText').textContent = `Item ${this.sortingIdx + 1}/${SORTING_CHALLENGES.length}`;
-    document.getElementById('sortingCurrentItem').textContent = item.item;
-    document.getElementById('sortingFeedbackBox').style.display = 'none';
-    document.getElementById('btnSortingNext').style.display = 'none';
+  loadPeoplesStep() {
+    const item = PEOPLES_CHALLENGES[this.peoplesIdx];
+    document.getElementById('peoplesProgressText').textContent = `Desafio ${this.peoplesIdx + 1}/${PEOPLES_CHALLENGES.length}`;
+    document.getElementById('peoplesDescriptionText').textContent = item.description;
+    document.getElementById('peoplesFeedbackBox').style.display = 'none';
+    document.getElementById('btnPeoplesNext').style.display = 'none';
 
-    window.speechSystem.speak(`Onde encontramos: ${item.item}? Campo ou Cidade?`);
+    document.querySelectorAll('.peoples-btn').forEach(b => {
+      b.className = 'peoples-btn';
+      b.disabled = false;
+    });
+
+    window.speechSystem.speak(item.description);
   }
 
-  handleSortingChoice(selectedCategory) {
-    const item = SORTING_CHALLENGES[this.sortingIdx];
-    const feedbackBox = document.getElementById('sortingFeedbackBox');
+  handlePeoplesChoice(selectedTarget, btnElement) {
+    const item = PEOPLES_CHALLENGES[this.peoplesIdx];
+    const feedbackBox = document.getElementById('peoplesFeedbackBox');
+    const feedbackTitle = document.getElementById('peoplesFeedbackTitle');
+    const feedbackText = document.getElementById('peoplesFeedbackText');
 
-    if (selectedCategory === item.category) {
+    if (selectedTarget === item.correctTarget) {
+      btnElement.classList.add('correct-choice');
+      window.soundSystem.playCorrect();
+      this.triggerConfetti();
+      this.stars += 2;
+      this.updateStatsUI();
+
+      document.querySelectorAll('.peoples-btn').forEach(b => b.disabled = true);
+
+      feedbackBox.className = 'feedback-box correct';
+      document.getElementById('peoplesFeedbackMascot').textContent = '🌿✨';
+      feedbackTitle.textContent = `Acertou! São os ${item.targetName}!`;
+      feedbackText.textContent = item.explanation;
+      feedbackBox.style.display = 'flex';
+
+      document.getElementById('btnPeoplesNext').style.display = 'inline-flex';
+      window.speechSystem.speak(`Acertou! ${item.explanation}`);
+    } else {
+      btnElement.classList.add('wrong-choice');
+      window.soundSystem.playTryAgain();
+
+      feedbackBox.className = 'feedback-box hint';
+      document.getElementById('peoplesFeedbackMascot').textContent = '🐾💡';
+      feedbackTitle.textContent = 'Quase lá! Veja a dica:';
+      feedbackText.textContent = `Preste atenção nas palavras-chave do texto (rios, mar, látex, quilombos ou floresta)!`;
+      feedbackBox.style.display = 'flex';
+
+      window.speechSystem.speak(`Quase lá! Preste atenção no modo de vida descrito no texto!`);
+    }
+  }
+
+  nextPeoplesChallenge() {
+    this.peoplesIdx++;
+    if (this.peoplesIdx < PEOPLES_CHALLENGES.length) {
+      this.loadPeoplesStep();
+    } else {
+      // Após o minijogo, vai para o quiz da Ilha dos Povos Tradicionais
+      this.quizQuestions = [...this.currentIsland.questions];
+      this.currentQuestionIdx = 0;
+      this.islandScore = 0;
+      this.loadQuestion();
+      this.showScreen('screenQuiz');
+    }
+  }
+
+  /* ========================================================
+     Minijogo 3: Detetive das Palavras (Capítulo 6)
+     ======================================================== */
+  startWordsMinigame() {
+    this.wordsIdx = 0;
+    this.loadWordsStep();
+    this.showScreen('screenWordsGame');
+  }
+
+  loadWordsStep() {
+    const item = WORDS_CHALLENGES[this.wordsIdx];
+    document.getElementById('wordsProgressText').textContent = `Palavra ${this.wordsIdx + 1}/${WORDS_CHALLENGES.length}`;
+    document.getElementById('wordsCurrentItem').textContent = item.word;
+    document.getElementById('wordsFeedbackBox').style.display = 'none';
+    document.getElementById('btnWordsNext').style.display = 'none';
+
+    window.speechSystem.speak(`A palavra ${item.word} tem origem Indígena Tupi ou Africana?`);
+  }
+
+  handleWordsChoice(selectedOrigin) {
+    const item = WORDS_CHALLENGES[this.wordsIdx];
+    const feedbackBox = document.getElementById('wordsFeedbackBox');
+    const feedbackTitle = document.getElementById('wordsFeedbackTitle');
+    const feedbackText = document.getElementById('wordsFeedbackText');
+
+    if (selectedOrigin === item.origin) {
       window.soundSystem.playCorrect();
       this.triggerConfetti();
       this.stars += 2;
       this.updateStatsUI();
 
       feedbackBox.className = 'feedback-box correct';
-      document.getElementById('sortingFeedbackMascot').textContent = '🌾✨';
-      document.getElementById('sortingFeedbackTitle').textContent = 'Exatamente!';
-      document.getElementById('sortingFeedbackText').textContent = item.explanation;
+      document.getElementById('wordsFeedbackMascot').textContent = '🥁✨';
+      feedbackTitle.textContent = `Exato! Origem ${item.originName}!`;
+      feedbackText.textContent = item.hint;
       feedbackBox.style.display = 'flex';
 
-      document.getElementById('btnSortingNext').style.display = 'inline-flex';
-      window.speechSystem.speak(`Correto! ${item.explanation}`);
+      document.getElementById('btnWordsNext').style.display = 'inline-flex';
+      window.speechSystem.speak(`Exato! Origem ${item.originName}! ${item.hint}`);
     } else {
       window.soundSystem.playTryAgain();
+
       feedbackBox.className = 'feedback-box hint';
-      document.getElementById('sortingFeedbackMascot').textContent = '🐾💡';
-      document.getElementById('sortingFeedbackTitle').textContent = 'Pense mais um pouquinho:';
-      document.getElementById('sortingFeedbackText').textContent = item.explanation;
+      document.getElementById('wordsFeedbackMascot').textContent = '🦜💡';
+      feedbackTitle.textContent = 'Dica do Tico:';
+      feedbackText.textContent = item.hint;
       feedbackBox.style.display = 'flex';
 
-      window.speechSystem.speak(item.explanation);
+      window.speechSystem.speak(`Dica: ${item.hint}`);
     }
   }
 
-  nextSortingChallenge() {
-    this.sortingIdx++;
-    if (this.sortingIdx < SORTING_CHALLENGES.length) {
-      this.loadSortingStep();
+  nextWordsChallenge() {
+    this.wordsIdx++;
+    if (this.wordsIdx < WORDS_CHALLENGES.length) {
+      this.loadWordsStep();
     } else {
-      // Após o minijogo, vai para as questões da ilha de paisagens
+      // Após o minijogo, vai para o quiz da Ilha de Palavras e Sabores
       this.quizQuestions = [...this.currentIsland.questions];
       this.currentQuestionIdx = 0;
       this.islandScore = 0;

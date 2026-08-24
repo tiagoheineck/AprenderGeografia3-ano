@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoAventura Kids 🌍🧭 - Jogo de Geografia (3º Ano)</title>
+  <title>GeoAventura Kids 🇧🇷✨ - Cultura, Povos e Heranças (3º Ano)</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇧🇷</text></svg>">
 </head>
 <body>
 
@@ -21,8 +21,8 @@
 
   <!-- Barra de Navegação Superior -->
   <header class="top-nav">
-    <div class="brand-badge" id="btnGoHome" title="Voltar ao Início">
-      <span>🌍</span> GeoAventura Kids
+    <div class="brand-badge" id="btnGoHome" title="Voltar ao Mapa">
+      <span>🇧🇷</span> GeoAventura: Cultura & Povos
     </div>
     <div class="top-controls">
       <button class="icon-btn" id="btnSoundToggle" title="Ligar/Desligar Sons" aria-label="Controle de Som">🔊</button>
@@ -43,9 +43,9 @@
           <div class="mascot-avatar capivara" title="Lina, a Capivara Guia">🐾</div>
         </div>
 
-        <span class="student-tag">🎒 3º Ano do Ensino Fundamental</span>
-        <h1 class="hero-title">GeoAventura Kids!</h1>
-        <p class="hero-subtitle">O Grande Mistério do Mapa Mágico 🗺️✨</p>
+        <span class="student-tag">🎒 Geografia • 3º Ano do Ensino Fundamental (Capítulos 4, 5 e 6)</span>
+        <h1 class="hero-title">GeoAventura do Brasil!</h1>
+        <p class="hero-subtitle">Manifestações Culturais, Povos Tradicionais e Heranças do Nosso Povo 🎭🌿🏛️</p>
 
         <div class="name-input-group">
           <label for="playerNameInput">Qual é o seu nome, pequeno(a) explorador(a)?</label>
@@ -53,7 +53,7 @@
         </div>
 
         <button id="btnStartAdventure" class="btn-fun btn-primary">
-          <span>🚀</span> Começar a Aventura!
+          <span>🚀</span> Começar a Aventura Cultural!
         </button>
       </div>
     </section>
@@ -71,20 +71,20 @@
         <!-- Banner do Simulado Geral para a Prova -->
         <div class="simulado-banner">
           <div class="simulado-info">
-            <h3>🏆 Grande Desafio da Prova (Simulado)</h3>
-            <p>Teste tudo o que aprendeu em uma rodada especial com todas as matérias!</p>
+            <h3>🏆 Grande Simulado da Prova (Capítulos 4, 5 e 6)</h3>
+            <p>Revise todos os temas da apostila de Geografia e conquiste o Troféu Dourado!</p>
           </div>
           <button id="btnStartSimulado" class="btn-fun btn-purple">
             <span>⭐</span> Fazer Simulado!
           </button>
         </div>
 
-        <!-- Grade das 5 Ilhas Temáticas -->
+        <!-- Grade das 4 Ilhas Temáticas -->
         <div class="islands-grid" id="islandsGridContainer">
-          <!-- As ilhas serão renderizadas dinamicamente pelo JavaScript -->
+          <!-- Renderizado via JS -->
         </div>
 
-        <div style="text-align: center; margin-top: 10px;">
+        <div style="text-align: center; margin-top: 14px;">
           <button id="btnViewCertificate" class="btn-fun btn-secondary" style="display: none;">
             <span>📜</span> Ver Meu Certificado de Mestre!
           </button>
@@ -101,8 +101,8 @@
           <button class="btn-fun btn-secondary" id="btnBackToMap" style="padding: 8px 18px; font-size: 1rem;">
             ⬅️ Mapa
           </button>
-          <span class="quiz-category-tag" id="quizCategoryTag">🧭 Bússola</span>
-          <span style="font-weight: 800; color: #0077b6;" id="quizQuestionCount">Pergunta 1/5</span>
+          <span class="quiz-category-tag" id="quizCategoryTag">🎭 Folclore</span>
+          <span style="font-weight: 800; color: #0077b6;" id="quizQuestionCount">Pergunta 1/6</span>
         </div>
 
         <div class="quiz-progress-bar-container">
@@ -110,7 +110,7 @@
         </div>
 
         <div class="question-box">
-          <div class="question-icon-big" id="questionIcon">☀️</div>
+          <div class="question-icon-big" id="questionIcon">📜</div>
           <div class="question-text-content">
             <h2 class="question-title" id="questionTitleText">Carregando pergunta...</h2>
             <button class="btn-read-aloud" id="btnReadQuestion" title="Ouvir a pergunta em voz alta">
@@ -145,149 +145,188 @@
     </section>
 
     <!-- ==========================================
-         TELA 4: Minijogo da Bússola Interativa
+         TELA 4: Minijogo 1 - Origem das Brincadeiras (Cap. 4)
          ========================================== -->
-    <section id="screenCompassGame" class="screen">
+    <section id="screenGamesOrigin" class="screen">
       <div class="quiz-card">
         <div class="quiz-header">
-          <button class="btn-fun btn-secondary" id="btnCompassBackMap" style="padding: 8px 18px; font-size: 1rem;">
+          <button class="btn-fun btn-secondary" id="btnGamesBackMap" style="padding: 8px 18px; font-size: 1rem;">
             ⬅️ Mapa
           </button>
-          <span class="quiz-category-tag">🧭 Desafio Prático</span>
-          <span style="font-weight: 800; color: #0077b6;" id="compassProgressText">Desafio 1/4</span>
-        </div>
-
-        <div class="compass-game-wrapper">
-          <div class="compass-instruction" id="compassInstructionText">
-            Aponte a bússola para o LESTE (onde o Sol nasce):
-          </div>
-
-          <div class="interactive-compass">
-            <button class="compass-direction-btn dir-n" data-dir="N">N</button>
-            <button class="compass-direction-btn dir-l" data-dir="L">L</button>
-            <button class="compass-direction-btn dir-s" data-dir="S">S</button>
-            <button class="compass-direction-btn dir-o" data-dir="O">O</button>
-            
-            <div class="compass-center-needle" id="compassNeedle">
-              <div class="needle-north"></div>
-              <div class="needle-south"></div>
-            </div>
-            <div class="needle-pivot"></div>
-          </div>
-
-          <div class="feedback-box" id="compassFeedbackBox" style="display: none; width: 100%;">
-            <div class="feedback-mascot" id="compassFeedbackMascot">🦜</div>
-            <div class="feedback-content">
-              <h4 id="compassFeedbackTitle">Muito bem!</h4>
-              <p id="compassFeedbackText">Você acertou a direção!</p>
-            </div>
-          </div>
-
-          <button id="btnCompassNext" class="btn-fun btn-primary" style="display: none; margin-top: 16px;">
-            Próxima Direção ➡️
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         TELA 5: Minijogo Separador Campo vs Cidade
-         ========================================== -->
-    <section id="screenSortingGame" class="screen">
-      <div class="quiz-card">
-        <div class="quiz-header">
-          <button class="btn-fun btn-secondary" id="btnSortingBackMap" style="padding: 8px 18px; font-size: 1rem;">
-            ⬅️ Mapa
-          </button>
-          <span class="quiz-category-tag">🏞️ Campo vs Cidade</span>
-          <span style="font-weight: 800; color: #0077b6;" id="sortingProgressText">Item 1/6</span>
+          <span class="quiz-category-tag">🪁 Origem das Brincadeiras</span>
+          <span style="font-weight: 800; color: #0077b6;" id="gamesProgressText">Brincadeira 1/6</span>
         </div>
 
         <div class="sorting-game-wrapper">
-          <p style="font-weight: 700; color: #64748b; margin-bottom: 12px; font-size: 1.1rem;">
-            Onde encontramos este elemento com mais frequência?
+          <p style="font-weight: 700; color: #475569; margin-bottom: 12px; font-size: 1.15rem;">
+            Em qual país ou cultura esta brincadeira tradicional foi inventada?
           </p>
 
-          <div class="current-item-card" id="sortingCurrentItem">
-            Trator arando a terra 🚜
+          <div class="current-item-card" id="gamesToyName">
+            Pipa (ou Papagaio de papel) 🪁
           </div>
 
-          <div class="drop-zones-grid">
-            <div class="zone-box zone-campo" id="btnZoneCampo">
-              <div class="zone-icon">🌾🚜</div>
-              <div class="zone-title" style="color: #2d6a4f;">Campo (Zona Rural)</div>
-              <div class="zone-desc">Plantações, animais, sítios e natureza</div>
-            </div>
-
-            <div class="zone-box zone-cidade" id="btnZoneCidade">
-              <div class="zone-icon">🏙️🚗</div>
-              <div class="zone-title" style="color: #0077b6;">Cidade (Zona Urbana)</div>
-              <div class="zone-desc">Prédios, comércio, avenidas e trânsito</div>
-            </div>
+          <div class="options-list" id="gamesOptionsContainer" style="max-width: 550px; width: 100%;">
+            <!-- Opções de países geradas via JS -->
           </div>
 
-          <div class="feedback-box" id="sortingFeedbackBox" style="display: none; margin-top: 24px; width: 100%; max-width: 650px;">
-            <div class="feedback-mascot" id="sortingFeedbackMascot">🐾</div>
+          <div class="feedback-box" id="gamesFeedbackBox" style="display: none; width: 100%; max-width: 550px; margin-top: 16px;">
+            <div class="feedback-mascot" id="gamesFeedbackMascot">🦜</div>
             <div class="feedback-content">
-              <h4 id="sortingFeedbackTitle">Muito bem!</h4>
-              <p id="sortingFeedbackText">Exatamente!</p>
+              <h4 id="gamesFeedbackTitle">Correto!</h4>
+              <p id="gamesFeedbackText">Explicação histórica da brincadeira.</p>
             </div>
           </div>
 
-          <button id="btnSortingNext" class="btn-fun btn-primary" style="display: none; margin-top: 18px;">
-            Próximo Elemento ➡️
+          <button id="btnGamesNext" class="btn-fun btn-primary" style="display: none; margin-top: 16px;">
+            Próxima Brincadeira ➡️
           </button>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         TELA 6: Vitória da Fase / Medalha
+         TELA 5: Minijogo 2 - Povos Tradicionais (Cap. 5)
+         ========================================== -->
+    <section id="screenPeoplesGame" class="screen">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <button class="btn-fun btn-secondary" id="btnPeoplesBackMap" style="padding: 8px 18px; font-size: 1rem;">
+            ⬅️ Mapa
+          </button>
+          <span class="quiz-category-tag">🌿 Povos e Comunidades</span>
+          <span style="font-weight: 800; color: #0077b6;" id="peoplesProgressText">Desafio 1/5</span>
+        </div>
+
+        <div class="sorting-game-wrapper">
+          <p style="font-weight: 700; color: #475569; margin-bottom: 12px; font-size: 1.15rem;">
+            Leia a descrição e descubra qual é o povo tradicional:
+          </p>
+
+          <div class="current-item-card" id="peoplesDescriptionText" style="font-size: 1.25rem; line-height: 1.4; color: #0f172a;">
+            Descrição do povo tradicional...
+          </div>
+
+          <div class="peoples-grid-options" id="peoplesButtonsContainer">
+            <button class="peoples-btn" data-target="caiçara">🛶 Caiçaras (Litoral)</button>
+            <button class="peoples-btn" data-target="ribeirinho">🛖 Ribeirinhos (Amazônia/Rios)</button>
+            <button class="peoples-btn" data-target="quilombola">✊🏿 Quilombolas (Palmares)</button>
+            <button class="peoples-btn" data-target="seringueiro">🌳 Seringueiros (Látex)</button>
+            <button class="peoples-btn" data-target="indigena">🏹 Povos Indígenas (+305 etnias)</button>
+          </div>
+
+          <div class="feedback-box" id="peoplesFeedbackBox" style="display: none; width: 100%; max-width: 650px; margin-top: 18px;">
+            <div class="feedback-mascot" id="peoplesFeedbackMascot">🐾</div>
+            <div class="feedback-content">
+              <h4 id="peoplesFeedbackTitle">Correto!</h4>
+              <p id="peoplesFeedbackText">Explicação sobre o povo tradicional.</p>
+            </div>
+          </div>
+
+          <button id="btnPeoplesNext" class="btn-fun btn-primary" style="display: none; margin-top: 16px;">
+            Próximo Povo Tradicional ➡️
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TELA 6: Minijogo 3 - Detetive das Palavras (Cap. 6)
+         ========================================== -->
+    <section id="screenWordsGame" class="screen">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <button class="btn-fun btn-secondary" id="btnWordsBackMap" style="padding: 8px 18px; font-size: 1rem;">
+            ⬅️ Mapa
+          </button>
+          <span class="quiz-category-tag">🔍 Detetive das Palavras</span>
+          <span style="font-weight: 800; color: #0077b6;" id="wordsProgressText">Palavra 1/8</span>
+        </div>
+
+        <div class="sorting-game-wrapper">
+          <p style="font-weight: 700; color: #475569; margin-bottom: 12px; font-size: 1.15rem;">
+            Esta palavra do nosso dia a dia tem origem <strong>Indígena (Tupi)</strong> ou <strong>Africana</strong>?
+          </p>
+
+          <div class="current-item-card" id="wordsCurrentItem" style="font-size: 2rem; color: #7209b7;">
+            Pipoca 🌽
+          </div>
+
+          <div class="drop-zones-grid">
+            <div class="zone-box zone-campo" id="btnWordIndigena" style="border-color: #2ec4b6; background: #e6fffa;">
+              <div class="zone-icon">🏹🌽</div>
+              <div class="zone-title" style="color: #0d9488;">Herança Indígena (Tupi)</div>
+              <div class="zone-desc">Frutas nativas, alimentos da terra e animais</div>
+            </div>
+
+            <div class="zone-box zone-cidade" id="btnWordAfricana" style="border-color: #f72585; background: #fff0f6;">
+              <div class="zone-icon">🥁🗣️</div>
+              <div class="zone-title" style="color: #b5179e;">Herança Africana</div>
+              <div class="zone-desc">Termos carinhosos, expressões e ritmo</div>
+            </div>
+          </div>
+
+          <div class="feedback-box" id="wordsFeedbackBox" style="display: none; margin-top: 20px; width: 100%; max-width: 650px;">
+            <div class="feedback-mascot" id="wordsFeedbackMascot">🦜</div>
+            <div class="feedback-content">
+              <h4 id="wordsFeedbackTitle">Perfeito!</h4>
+              <p id="wordsFeedbackText">Dica etimológica.</p>
+            </div>
+          </div>
+
+          <button id="btnWordsNext" class="btn-fun btn-primary" style="display: none; margin-top: 16px;">
+            Próxima Palavra ➡️
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TELA 7: Vitória da Fase / Medalha
          ========================================== -->
     <section id="screenVictory" class="screen">
       <div class="victory-card">
         <div class="trophy-bounce" id="victoryTrophyIcon">🏆</div>
         <h2 class="victory-title" id="victoryTitle">Parabéns, Explorador(a)!</h2>
-        <p class="victory-msg" id="victoryMsg">Você conquistou a Ilha da Bússola Encantada!</p>
+        <p class="victory-msg" id="victoryMsg">Você conquistou a Ilha!</p>
 
         <div class="reward-badge-showcase">
           <div class="reward-badge-icon" id="rewardBadgeIcon">🌟</div>
           <div class="reward-badge-text">
-            <h4 id="rewardBadgeTitle">Medalha Mestre da Bússola</h4>
-            <p>Você sabe se orientar pelo Sol e pelos pontos cardeais!</p>
+            <h4 id="rewardBadgeTitle">Medalha</h4>
+            <p id="rewardBadgeDesc">Descrição da conquista cultural!</p>
           </div>
         </div>
 
         <div>
           <button id="btnVictoryContinue" class="btn-fun btn-success">
-            <span>🗺️</span> Continuar no Mapa
+            <span>🗺️</span> Continuar no Mapa Cultural
           </button>
         </div>
       </div>
     </section>
 
     <!-- ==========================================
-         TELA 7: Certificado Final de Mestre
+         TELA 8: Certificado Final de Mestre
          ========================================== -->
     <section id="screenCertificate" class="screen">
       <div class="certificate-frame" id="certificateFrame">
         <div class="certificate-header">⭐ Certificado de Mestre em Geografia ⭐</div>
-        <div class="certificate-subtitle">Ensino Fundamental - 3º Ano</div>
+        <div class="certificate-subtitle">Cultura Brasileira, Povos Tradicionais e Heranças (3º Ano)</div>
 
-        <p style="font-size: 1.1rem; color: #64748b;">Certificamos com muito orgulho que:</p>
+        <p style="font-size: 1.1rem; color: #64748b;">Certificamos com imenso orgulho que:</p>
         <div class="cert-student-name" id="certStudentName">Super Explorador(a)</div>
 
         <p class="cert-body-text">
-          Concluiu com brilhantismo todos os desafios geográficos: dominou os <strong>Pontos Cardeais</strong>, desvendou as <strong>Paisagens do Campo e da Cidade</strong>, viajou pelos <strong>Estados do Brasil</strong>, protegeu os <strong>Elementos da Natureza</strong> e explorou o <strong>Globo Terrestre</strong>!
+          Concluiu com nota 10 todos os desafios dos <strong>Capítulos 4, 5 e 6</strong>: dominou as <strong>Lendas e Festas Folclóricas</strong>, valorizou as <strong>Comunidades Tradicionais</strong> (Indígenas, Quilombolas, Caiçaras, Ribeirinhos e Seringueiros), descobriu a <strong>Arquitetura Enxaimel e Colonial</strong> e desvendou a <strong>Riqueza das Palavras e Sabores</strong> do Brasil!
         </p>
 
         <div class="cert-badges-row" id="certBadgesContainer">
-          <div class="cert-mini-badge" title="Mestre da Bússola">🧭 🌟</div>
-          <div class="cert-mini-badge" title="Guardião das Paisagens">🏞️ 🌾</div>
-          <div class="cert-mini-badge" title="Explorador do Brasil">🇧🇷 💚</div>
-          <div class="cert-mini-badge" title="Defensor das Águas">🌊 💧</div>
-          <div class="cert-mini-badge" title="Mestre dos Continentes">🗺️ 🌍</div>
-          <div class="cert-mini-badge" title="Campeão do Simulado">🏆 ⭐</div>
+          <div class="cert-mini-badge" title="Mestre do Folclore">🎭 Folclore</div>
+          <div class="cert-mini-badge" title="Guardião dos Povos Tradicionais">🌿 Povos</div>
+          <div class="cert-mini-badge" title="Mestre das Heranças">🏛️ Heranças</div>
+          <div class="cert-mini-badge" title="Mestre dos Sabores e Ritmos">🥁 Sabores</div>
+          <div class="cert-mini-badge" title="Campeão do Simulado">🏆 Simulado</div>
         </div>
 
         <div class="cert-signatures">

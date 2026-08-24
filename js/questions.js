@@ -1,455 +1,483 @@
 /**
- * GeoAventura Kids - Banco Pedagógico de Questões (3º Ano do Ensino Fundamental)
- * Alinhado à BNCC de Geografia: Pontos Cardeais, Paisagens, Brasil, Natureza e Globo Terrestre.
+ * GeoAventura Kids - Banco de Questões e Desafios (3º Ano do Ensino Fundamental)
+ * Alinhado integralmente aos Capítulos 4, 5 e 6 da Apostila de Geografia:
+ * Cap 4: Manifestações Culturais no Município
+ * Cap 5: Povos e Comunidades Tradicionais
+ * Cap 6: Influências Culturais de Diferentes Povos
  */
 
 const ISLANDS_DATA = [
   {
-    id: "cardeais",
-    title: "A Ilha da Bússola Encantada",
-    subtitle: "Pontos Cardeais e Orientação no Espaço",
-    icon: "🧭",
-    badge: "Mestre da Bússola",
-    badgeIcon: "🌟",
+    id: "folclore",
+    chapter: "Capítulo 4",
+    title: "Reino do Folclore e das Festas",
+    subtitle: "Lendas, Festas Populares e Origem das Brincadeiras",
+    icon: "🎭",
+    badge: "Mestre do Folclore",
+    badgeIcon: "🎭",
     color: "#ff8400",
-    description: "Aprenda a se orientar com o Sol, a bússola e a rosa dos ventos!",
+    description: "Conheça a lenda do Boto, o Bumba Meu Boi de Parintins, o Carnaval e as brincadeiras tradicionais!",
+    hasMinigame: "brincadeiras",
     questions: [
       {
-        id: "c1",
-        question: "Em qual direção o Sol nasce todos os dias pela manhã?",
+        id: "f1",
+        question: "O que é o FOLCLORE de um povo?",
         options: [
-          "No Leste (Nascente) 🌅",
-          "No Oeste (Poente) 🌇",
-          "No Norte ❄️",
-          "No Sul 🐧"
+          "O conjunto de lendas, tradições, sabedoria popular, brincadeiras, ritmos e festas transmitidos de geração em geração 📜🎉",
+          "Um tipo de computador muito antigo 💻",
+          "Um livro de matemática com contas difíceis 📐",
+          "Uma regra de trânsito para carros 🚗"
         ],
         correct: 0,
-        hint: "Pense na palavra 'Nascente'! É o lado onde o Sol aparece cedinho para iluminar nosso dia.",
-        explanation: "O Sol sempre aparece no Leste (também chamado de Nascente) e se põe no Oeste (Poente)!",
-        icon: "☀️"
+        hint: "Pense nas histórias que seus avós contam, nas cantigas de roda e nas festas populares da nossa gente!",
+        explanation: "O folclore reúne a cultura e a sabedoria popular: lendas, danças, cantigas, comidas e festas que fazem parte da nossa identidade!",
+        icon: "📜"
       },
       {
-        id: "c2",
-        question: "No fim da tarde, o Sol 'se esconde' e vai embora. Em qual direção ele se põe?",
+        id: "f2",
+        question: "Na lenda amazônica do Boto-cor-de-rosa, como o boto é descrito?",
         options: [
-          "No Leste 🌅",
-          "No Oeste (Poente) 🌇",
-          "No Sul 🐧",
-          "No Norte ❄️"
-        ],
-        correct: 1,
-        hint: "Lembra da palavra 'Poente'? É onde o Sol se põe para a noite chegar!",
-        explanation: "O lado em que o Sol se põe no entardecer é chamado de Oeste ou Poente.",
-        icon: "🌇"
-      },
-      {
-        id: "c3",
-        question: "Se você abrir os braços e apontar o braço DIREITO para o Sol que nasce (Leste), para onde seu rosto estará olhando?",
-        options: [
-          "Para o Norte 🧭",
-          "Para o Sul 🌲",
-          "Para o Oeste 🌄",
-          "Para o chão 🌱"
+          "Um mamífero aquático dos rios que, segundo a lenda, se transforma em um homem elegante de chapéu para encantar as festas 🐬🎩",
+          "Um pássaro gigante que voa no céu à noite 🦅",
+          "Um peixe dourado que concede três desejos 🐠",
+          "Um jacaré mágico com asas 🐊"
         ],
         correct: 0,
-        hint: "Com a mão direita no Leste e a esquerda no Oeste, a sua frente aponta sempre para o Norte!",
-        explanation: "Essa é a regra mágica dos navegadores: braço direito no Leste, braço esquerdo no Oeste, à sua frente fica o Norte e atrás fica o Sul!",
-        icon: "🧍"
+        hint: "Ele vive nos rios da Amazônia e usa um chapéu branco para esconder o furinho de respirar na cabeça!",
+        explanation: "O boto-cor-de-rosa é um mamífero aquático real da Região Norte. Na narrativa mítica, ele vira um belo rapaz que dança nas noites de festa junina!",
+        icon: "🐬"
       },
       {
-        id: "c4",
-        question: "Qual é o nome do desenho em formato de estrela que mostra os pontos cardeais nos mapas?",
+        id: "f3",
+        question: "Na história do Bumba Meu Boi, por que Pai Francisco cortou a língua do boi mais bonito do patrão?",
         options: [
-          "Rosa dos Ventos 🧭",
-          "Estrela Cadente 🌠",
-          "Flor do Campo 🌻",
-          "Círculo Mágico 🔮"
+          "Porque sua esposa Catirina estava grávida e teve o forte desejo de comer a língua do boi 🤰🐮",
+          "Porque ele queria vender a língua no mercado 🏪",
+          "Porque o boi não sabia cantar 🎵",
+          "Porque foi uma ordem do fazendeiro 👨‍🌾"
         ],
         correct: 0,
-        hint: "Tem nome de uma flor linda e sopra as direções do vento!",
-        explanation: "A Rosa dos Ventos é uma figura essencial nos mapas para indicar Norte (N), Sul (S), Leste (L) e Oeste (O).",
-        icon: "🧭"
+        hint: "A esposa grávida teve um desejo bem diferente e o pajé ajudou a ressuscitar o boizinho!",
+        explanation: "No auto do Bumba Meu Boi, Catirina deseja a língua do boi. Com a ajuda do pajé/curandeiro, o boi ressuscita e todos celebram com uma grande festa!",
+        icon: "🐮"
       },
       {
-        id: "c5",
-        question: "Qual instrumento antigo usa uma agulha imantada que sempre aponta para o Norte da Terra?",
+        id: "f4",
+        question: "No famoso Festival Folclórico de Parintins, no Amazonas, quais são os dois bois que disputam a festa?",
         options: [
-          "Bússola 🧭",
-          "Termômetro 🌡️",
-          "Relógio de Pulso ⌚",
-          "Lupa 🔍"
+          "Boi Caprichoso (Azul 💙) e Boi Garantido (Vermelho ❤️)",
+          "Boi Amarelo e Boi Verde 💛💚",
+          "Boi Valente e Boi Veloz 🐎",
+          "Boi Estrela e Boi Lua 🌟🌙"
         ],
         correct: 0,
-        hint: "É um aparelho redondo com uma agulhinha magnética que gira livremente.",
-        explanation: "A bússola foi inventada há muitos séculos e sua agulha magnética é atraída pelo polo norte magnético da Terra!",
-        icon: "🧭"
+        hint: "Uma torcida veste azul com a estrela na testa e a outra veste vermelho com o coração na testa!",
+        explanation: "O Festival de Parintins é um dos maiores espetáculos culturais do Brasil, com a disputa emocionante entre o Boi Caprichoso (azul) e o Boi Garantido (vermelho)!",
+        icon: "🎪"
+      },
+      {
+        id: "f5",
+        question: "No período colonial do Brasil, o Carnaval era comemorado com o 'Entrudo'. Como era essa brincadeira?",
+        options: [
+          "As pessoas jogavam água, farinha e 'limões-de-cheiro' umas nas outras nas ruas 💦🍋",
+          "As pessoas assistiam a filmes no cinema 🍿",
+          "Era proibido sair de casa e fazer qualquer barulho 🤫",
+          "Havia corridas de carros de fórmula 1 🏎️"
+        ],
+        correct: 0,
+        hint: "Era uma grande farra molhada nas ruas antes de existirem os desfiles de samba e blocos atuais!",
+        explanation: "O Entrudo foi a primeira forma de Carnaval popular no Brasil colonial, onde amigos e vizinhos jogavam água perfumada e pós coloridos uns nos outros!",
+        icon: "🎭"
+      },
+      {
+        id: "f6",
+        question: "O esporte mais popular do Brasil, o FUTEBOL, foi criado originalmente em qual país?",
+        options: [
+          "Na Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿⚽",
+          "No Japão 🇯🇵",
+          "No Egito Antigo 🇪🇬",
+          "Na Austrália 🇦🇺"
+        ],
+        correct: 0,
+        hint: "Fica na Europa! O esporte com 11 jogadores e bola nos pés foi trazido ao Brasil por Charles Miller.",
+        explanation: "O futebol moderno nasceu na Inglaterra no século XIX. No Brasil, virou paixão nacional, originando também o futsal e o futebol de areia!",
+        icon: "⚽"
       }
     ]
   },
   {
-    id: "paisagens",
-    title: "O Vale das Paisagens",
-    subtitle: "Campo, Cidade, Praia e Natureza",
-    icon: "🏞️",
-    badge: "Guardião das Paisagens",
-    badgeIcon: "🌾",
-    color: "#2ec4b6",
-    description: "Descubra as diferenças entre a zona rural (campo) e a zona urbana (cidade)!",
-    questions: [
-      {
-        id: "p1",
-        question: "Qual desses elementos faz parte de uma paisagem NATURAL (que não foi construída pelo ser humano)?",
-        options: [
-          "Um rio com cachoeira e árvores nativas 🌊",
-          "Um prédio de 20 andares 🏢",
-          "Uma ponte de concreto 🌉",
-          "Um semáforo de trânsito 🚦"
-        ],
-        correct: 0,
-        hint: "Elemento natural é aquilo que a própria natureza criou sem a mão do ser humano.",
-        explanation: "Rios, montanhas, florestas e cachoeiras são elementos naturais. Prédios e pontes são elementos culturais ou construídos.",
-        icon: "🌊"
-      },
-      {
-        id: "p2",
-        question: "Na Zona Rural (o campo), o que é mais comum de encontrar no dia a dia?",
-        options: [
-          "Plantações, criação de animais e ar puro 🚜🐄",
-          "Muitos prédios altos e congestionamento de carros 🚗🏢",
-          "Estações de metrô lotadas 🚇",
-          "Shoppings gigantes e avenidas largas 🏬"
-        ],
-        correct: 0,
-        hint: "Pense na vida na fazenda ou sítio, onde os alimentos são plantados!",
-        explanation: "No campo ou zona rural há muito espaço verde, plantações de alimentos (agricultura) e criação de gado e aves (pecuária).",
-        icon: "🚜"
-      },
-      {
-        id: "p3",
-        question: "Como o campo (zona rural) ajuda as pessoas que vivem na cidade (zona urbana)?",
-        options: [
-          "Produzindo alimentos frescos como frutas, leite e verduras 🍎🥛🥬",
-          "Fabricando celulares e computadores 📱💻",
-          "Construindo arranha-céus 🏙️",
-          "Criando avenidas asfaltadas 🛣️"
-        ],
-        correct: 0,
-        hint: "De onde vêm a maçã, o feijão, o arroz e o leite que compramos no supermercado?",
-        explanation: "O campo e a cidade são grandes parceiros: o campo produz o nosso alimento e a cidade produz roupas, remédios e tecnologias!",
-        icon: "🍎"
-      },
-      {
-        id: "p4",
-        question: "Uma paisagem com muitos prédios, ruas asfaltadas, lojas e muito trânsito pertence a qual ambiente?",
-        options: [
-          "Zona Urbana (Cidade) 🏙️",
-          "Floresta Virgem 🌴",
-          "Fundo do Mar 🐠",
-          "Zona Rural (Fazenda) 🚜"
-        ],
-        correct: 0,
-        hint: "É o lugar onde há muitas pessoas morando juntas em bairros com comércio e serviços.",
-        explanation: "A Zona Urbana é caracterizada por cidades, com muitas construções feitas pelo ser humano, ruas, escolas e comércios.",
-        icon: "🏙️"
-      },
-      {
-        id: "p5",
-        question: "O que acontece quando os seres humanos constroem casas, ruas e fábricas em uma floresta?",
-        options: [
-          "A paisagem é modificada (transformada em paisagem cultural/humanizada) 🏗️",
-          "A floresta continua exatamente igual 🌳",
-          "Aumenta a quantidade de macacos e onças nativas 🐒",
-          "A água dos rios fica congelada ❄️"
-        ],
-        correct: 0,
-        hint: "A paisagem deixa de ser puramente natural e passa a ter a marca do trabalho humano.",
-        explanation: "Quando o ser humano constrói e transforma a natureza, dizemos que a paisagem foi modificada ou humanizada.",
-        icon: "🏗️"
-      }
-    ]
-  },
-  {
-    id: "brasil",
-    title: "Brasil, Nossa Terra Querida",
-    subtitle: "Estados, Capitais e Regiões do Brasil",
-    icon: "🇧🇷",
-    badge: "Explorador do Brasil",
-    badgeIcon: "🇧🇷",
+    id: "povos",
+    chapter: "Capítulo 5",
+    title: "Santuário dos Povos Tradicionais",
+    subtitle: "Indígenas, Quilombolas, Caiçaras, Ribeirinhos e Seringueiros",
+    icon: "🏹",
+    badge: "Guardião dos Povos Tradicionais",
+    badgeIcon: "🌿",
     color: "#2b9348",
-    description: "Viaje pelo nosso país e conheça capitais, estados e paisagens brasileiras!",
+    description: "Aprenda sobre os modos de vida, territórios coletivos e a importância de proteger as comunidades tradicionais!",
+    hasMinigame: "povos",
     questions: [
       {
-        id: "b1",
-        question: "Qual é a capital do Brasil, onde fica a sede do governo do nosso país?",
+        id: "po1",
+        question: "No Brasil existem muitos povos indígenas diferentes. O que demonstra essa grande diversidade?",
         options: [
-          "Brasília (no Distrito Federal) 🏛️",
-          "Rio de Janeiro 🏖️",
-          "São Paulo 🏙️",
-          "Salvador 🎭"
+          "Existem mais de 305 etnias indígenas e mais de 270 línguas diferentes faladas no país 🗣️🏹",
+          "Todos os indígenas falam a mesma língua e têm as mesmas roupas 👕",
+          "Só existe uma única tribo em todo o território nacional ⛺",
+          "Os indígenas só vivem em outros continentes 🌍"
         ],
         correct: 0,
-        hint: "Ela foi planejada em formato que lembra um avião e fica no centro do país!",
-        explanation: "Brasília foi inaugurada em 1960 e é a capital federal de todo o Brasil!",
-        icon: "🏛️"
+        hint: "O Brasil tem uma enorme riqueza de línguas e culturas nativas, como os povos Guarani e Catuquina!",
+        explanation: "O Brasil possui mais de 305 etnias indígenas e mais de 270 línguas indígenas vivas, cada uma com seus costumes, mitos e saberes!",
+        icon: "🏹"
       },
       {
-        id: "b2",
-        question: "Qual é o nome do imenso oceano que banha todas as praias do litoral do Brasil?",
+        id: "po2",
+        question: "Quem são as comunidades CAIÇARAS?",
         options: [
-          "Oceano Atlântico 🌊",
-          "Oceano Pacífico ⛵",
-          "Oceano Índico 🏝️",
-          "Oceano Glacial Ártico ❄️"
+          "Populações tradicionais do litoral brasileiro que vivem da pesca artesanal e do respeito ao mar 🛶🌊",
+          "Pessoas que vivem no topo de montanhas congeladas 🏔️",
+          "Operários que constroem fábricas no centro das cidades 🏭",
+          "Astronautas que viajam no espaço 🚀"
         ],
         correct: 0,
-        hint: "Começa com a letra 'A' e banha toda a costa brasileira do Norte ao Sul!",
-        explanation: "O Brasil tem milhares de quilômetros de praias banhadas pelas águas do Oceano Atlântico.",
-        icon: "🌊"
+        hint: "Eles moram pertinho das praias e usam canoas para pescar peixes e frutos do mar!",
+        explanation: "Os caiçaras são povos tradicionais que habitam o litoral dos estados de SP, RJ e PR, com rica sabedoria sobre marés, barcos e pesca artesanal.",
+        icon: "🛶"
       },
       {
-        id: "b3",
-        question: "Em qual região do Brasil fica a gigantesca Floresta Amazônica e o imenso Rio Amazonas?",
+        id: "po3",
+        question: "Como vivem os povos RIBEIRINHOS, muito comuns na Amazônia?",
         options: [
-          "Região Norte 🦜🌳",
-          "Região Sul ❄️",
-          "Região Sudeste 🏙️",
-          "Região Central do Deserto 🏜️"
+          "Moram em casas de palafita às margens dos rios e usam barcos como principal meio de transporte e pesca 🛖⛵",
+          "Moram em prédios de 50 andares com elevador 🏢",
+          "Não gostam de água e evitam rios 🏜️",
+          "Andam apenas de metrô subterrâneo 🚇"
         ],
         correct: 0,
-        hint: "Fica na parte de cima do mapa do Brasil, onde moram muitas espécies de animais e plantas!",
-        explanation: "A Região Norte abriga a maior floresta tropical do planeta: a Floresta Amazônica, cheia de biodiversidade!",
-        icon: "🦜"
+        hint: "As casas de madeira são erguidas em estacas altas (palafitas) para a água do rio não entrar na época das cheias!",
+        explanation: "Os ribeirinhos vivem integrados à dinâmica das águas: quando o rio sobe ou desce, suas vidas e viagens de barco acompanham a natureza.",
+        icon: "🛖"
       },
       {
-        id: "b4",
-        question: "Em qual continente do planeta Terra o Brasil está localizado?",
+        id: "po4",
+        question: "O que eram os QUILOMBOS, como o famoso Quilombo dos Palmares de Zumbi e Dandara?",
         options: [
-          "América (mais especificamente, América do Sul) 🌎",
-          "Europa 🏰",
-          "África 🦒",
-          "Ásia 🐼"
+          "Comunidades de refúgio, união e resistência formadas por africanos e descendentes que lutavam contra a escravidão ✊🏿🛖",
+          "Grandes feiras para vender tecidos importados 🛍️",
+          "Navios de turismo que viajavam pelo mundo 🚢",
+          "Escolas de música clássica europeia 🎻"
         ],
         correct: 0,
-        hint: "Nosso continente é o americano, e nós ficamos na parte sul dele!",
-        explanation: "O Brasil é o maior país da América do Sul e faz fronteira com quase todos os países vizinhos!",
-        icon: "🌎"
+        hint: "Eram espaços livres na floresta onde as pessoas escravizadas podiam viver em comunidade com dignidade.",
+        explanation: "Os quilombos foram fundamentais na resistência à escravidão. Hoje, as comunidades remanescentes de quilombos mantêm a posse e o uso coletivo da terra!",
+        icon: "✊🏿"
       },
       {
-        id: "b5",
-        question: "O território do Brasil é dividido em várias partes menores para organizar o país. Como essas partes são chamadas?",
+        id: "po5",
+        question: "Qual é o trabalho tradicional dos SERINGUEIROS na Floresta Amazônica?",
         options: [
-          "Estados (e o Distrito Federal) 🗺️",
-          "Planetas 🪐",
-          "Ilhas desertas 🏝️",
-          "Castelos reais 🏰"
+          "Fazer pequenos cortes na casca da árvore seringueira para colher o látex e produzir borracha natural sem derrubar a mata 🌳🍶",
+          "Cortar todas as árvores com tratores para fazer estacionamentos 🚜",
+          "Plantar trigo no gelo da Antártida ❄️",
+          "Construir navios de aço ⛴️"
         ],
         correct: 0,
-        hint: "O Brasil tem 26 deles, mais o Distrito Federal!",
-        explanation: "O Brasil é formado por 26 Estados (como Bahia, Minas Gerais, Amazonas, Paraná...) e 1 Distrito Federal!",
-        icon: "🗺️"
+        hint: "Eles extraem um líquido branco chamado látex sem machucar ou matar a árvore!",
+        explanation: "Os seringueiros praticam o extrativismo sustentável: protegem a floresta em pé porque precisam das seringueiras vivas para tirar o látex!",
+        icon: "🌳"
+      },
+      {
+        id: "po6",
+        question: "Quais são as principais ameaças enfrentadas hoje pelos povos e comunidades tradicionais?",
+        options: [
+          "Desmatamento, garimpo/mineração ilegal, expansão pecuária desordenada e hidrelétricas 🚜🪓",
+          "Excesso de chuva de confete 🎊",
+          "Muitas pessoas lendo livros de histórias infantis 📚",
+          "Brincadeiras de pular corda no parque 🪢"
+        ],
+        correct: 0,
+        hint: "A destruição da natureza e a invasão de suas terras ameaçam a sobrevivência desses povos.",
+        explanation: "A preservação das florestas, a demarcação das terras e o respeito aos direitos (escola diferenciada e saúde) são urgentes para proteger os povos tradicionais.",
+        icon: "🛡️"
       }
     ]
   },
   {
-    id: "natureza",
-    title: "O Santuário da Natureza",
-    subtitle: "Rios, Relevo, Clima e Meio Ambiente",
-    icon: "🌊",
-    badge: "Defensor das Águas",
-    badgeIcon: "💧",
-    color: "#3a86ff",
-    description: "Entenda como funcionam os rios, as montanhas, o clima e como proteger a Terra!",
-    questions: [
-      {
-        id: "n1",
-        question: "Como se chama o lugar onde um rio 'nasce', ou seja, onde a água brota da terra?",
-        options: [
-          "Nascente (ou cabeceira) 💧🌱",
-          "Foz 🌊",
-          "Cachoeira artificial 🚿",
-          "Piscina olímpica 🏊"
-        ],
-        correct: 0,
-        hint: "A palavra vem do verbo 'nascer'. É o comecinho da vida do rio!",
-        explanation: "A nascente é o local onde a água subterrânea aflora para formar um córrego e, depois, um rio!",
-        icon: "💧"
-      },
-      {
-        id: "n2",
-        question: "E como se chama o lugar onde o rio termina sua viagem e deságua no mar ou em outro rio?",
-        options: [
-          "Foz (ou desembocadura) 🌊",
-          "Nascente 💧",
-          "Pico da montanha ⛰️",
-          "Nuvem de chuva ☁️"
-        ],
-        correct: 0,
-        hint: "É uma palavra curtinha de três letras que começa com a letra 'F'!",
-        explanation: "A foz é o ponto final do rio, onde ele entrega suas águas para o oceano ou para um rio maior.",
-        icon: "🌊"
-      },
-      {
-        id: "n3",
-        question: "Qual atitude é FUNDAMENTAL para proteger os rios e o meio ambiente?",
-        options: [
-          "Não jogar lixo nos rios e economizar água 🚯💧",
-          "Jogar garrafas plásticas na água 🍾",
-          "Cortar todas as árvores que ficam perto das margens 🪓",
-          "Deixar a torneira aberta o dia todo 🚿"
-        ],
-        correct: 0,
-        hint: "Cuidar da água limpa e da natureza ajuda todos os seres vivos!",
-        explanation: "Preservar a vegetação das margens (mata ciliar) e nunca poluir com lixo garante água limpa para todos nós!",
-        icon: "🚯"
-      },
-      {
-        id: "n4",
-        question: "Qual é a estação do ano conhecida pelos dias mais quentes e pelas férias de praia?",
-        options: [
-          "Verão ☀️🏖️",
-          "Inverno ❄️🧤",
-          "Outono 🍂",
-          "Primavera 🌸"
-        ],
-        correct: 0,
-        hint: "É a época de muito Sol, calor, sorvete e piscina!",
-        explanation: "No Verão os dias são mais longos e as temperaturas são mais altas. No Inverno acontece o contrário: faz mais frio!",
-        icon: "☀️"
-      },
-      {
-        id: "n5",
-        question: "Como chamamos as grandes elevações naturais do terreno, que são muito altas?",
-        options: [
-          "Montanhas e Serras ⛰️",
-          "Planícies 🌾",
-          "Túneis 🕳️",
-          "Praias de areia 🏖️"
-        ],
-        correct: 0,
-        hint: "São terrenos altos, com picos pontudos ou arredondados que sobem até o céu!",
-        explanation: "Montanhas, morros e serras são formas do relevo que se elevam bem acima do nível do terreno ao redor.",
-        icon: "⛰️"
-      }
-    ]
-  },
-  {
-    id: "globo",
-    title: "A Rota do Globo Terrestre",
-    subtitle: "Planeta Terra, Continentes e Mapas",
-    icon: "🗺️",
-    badge: "Mestre dos Continentes",
-    badgeIcon: "🌍",
+    id: "influencias",
+    chapter: "Capítulo 6",
+    title: "Mosaico das Heranças Culturais",
+    subtitle: "Miscigenação, Heranças Indígenas, Africanas e Europeias",
+    icon: "🏛️",
+    badge: "Mestre das Heranças",
+    badgeIcon: "🎨",
     color: "#7209b7",
-    description: "Explore o planeta azul, seus oceanos e as grandes porções de terra!",
+    description: "Descubra a arquitetura Enxaimel, o hábito de dormir em rede, o sincretismo e os imigrantes de ontem e de hoje!",
     questions: [
       {
-        id: "g1",
-        question: "Qual é o formato do nosso planeta Terra?",
+        id: "i1",
+        question: "O que significa a palavra MISCIGENAÇÃO na história do povo brasileiro?",
         options: [
-          "Esférico (arredondado como uma bola) 🌍",
-          "Quadrado como uma caixa 📦",
-          "Plano como uma folha de papel 📄",
-          "Triangular como uma pirâmide 🔺"
+          "A mistura e o encontro de povos de diferentes origens culturais, étnicas e tradições 🤝🏽🇧🇷",
+          "A separação completa de todas as pessoas em ilhas isoladas 🏝️",
+          "O ato de pintar um quadro com apenas uma cor ⬛",
+          "Um tipo de remédio para dor de dente 💊"
         ],
         correct: 0,
-        hint: "Olhe para a imagem do globo terrestre! Ele é redondinho no espaço.",
-        explanation: "A Terra tem formato geóide/esférico (arredondado, ligeiramente achatado nos polos).",
-        icon: "🌍"
+        hint: "O Brasil é um país multicultural porque nasceu do encontro de indígenas, africanos, europeus e imigrantes!",
+        explanation: "A miscigenação é a união e integração de diferentes matrizes culturais (indígena, africana, portuguesa, italiana, alemã, japonesa, etc.), formando nosso povo!",
+        icon: "🤝"
       },
       {
-        id: "g2",
-        question: "Por que a Terra é carinhosamente chamada de 'Planeta Azul' quando vista do espaço?",
+        id: "i2",
+        question: "Qual costume muito comum no cotidiano brasileiro foi herdado diretamente dos POVOS INDÍGENAS?",
         options: [
-          "Porque a maior parte da sua superfície é coberta por água (oceanos e mares) 🌊",
-          "Porque ela é pintada de tinta azul com pincel 🎨",
-          "Porque só existem pássaros azuis no planeta 🐦",
-          "Porque não existem nuvens no céu ☁️"
+          "O costume de descansar em REDES de dormir e o hábito do banho diário 🛏️🚿",
+          "Usar casacos pesados de pele de urso no calor 🧥",
+          "Comer pizza com garfo de ouro todos os dias 🍕",
+          "Dormir em cima de mesas de escritório 🏢"
         ],
         correct: 0,
-        hint: "Cerca de 70% do nosso planeta é composto de água líquida nos oceanos!",
-        explanation: "Visto do espaço sideral, o nosso planeta brilha em tons de azul por causa da enorme quantidade de água nos oceanos.",
-        icon: "🌊"
+        hint: "É aquela rede gostosa de tecido amarrada na varanda para descansar e o cuidado de tomar banho todos os dias!",
+        explanation: "Os indígenas nos ensinaram a dormir em redes de palha e algodão, o apreço pelo banho diário e o artesanato com cestos trançados de fibras vegetais.",
+        icon: "🌴"
       },
       {
-        id: "g3",
-        question: "Como chamamos as gigantescas porções de terra do planeta onde ficam os países?",
+        id: "i3",
+        question: "Qual é a característica marcante da arquitetura ENXAIMEL, trazida pelos imigrantes ALEMÃES para o Sul e Sudeste?",
         options: [
-          "Continentes 🗺️",
-          "Lagoas 🦆",
-          "Nuvens ☁️",
-          "Asteroide ☄️"
+          "Casas com vigas de madeira aparentes encaixadas e telhados bem inclinados para a chuva e o frio 🏡🪵",
+          "Pirâmides gigantes feitas de pedra dourada 🔺",
+          "Prédios redondos feitos inteiramente de vidro espelhado 🏙️",
+          "Tendas de tecido no deserto ⛺"
         ],
         correct: 0,
-        hint: "Exemplos: América, África, Europa, Ásia, Oceania e Antártida.",
-        explanation: "Os continentes são as grandes massas de terra da Terra cercadas pelos oceanos!",
-        icon: "🗺️"
+        hint: "Você vê essas construções charmosas em cidades como Blumenau, Joinville, Gramado e Campos do Jordão!",
+        explanation: "A técnica do Enxaimel usa troncos de madeira cruzados preenchidos com tijolos ou pedras e telhados pontudos típicos da tradição alemã!",
+        icon: "🏡"
       },
       {
-        id: "g4",
-        question: "Qual instrumento é um modelo tridimensional redondo que representa fielmente a Terra?",
+        id: "i4",
+        question: "O que é o SINCRETISMO RELIGIOSO, muito presente na herança afro-brasileira?",
         options: [
-          "Globo Terrestre 🌐",
-          "Régua escolar 📏",
-          "Calculadora 🔢",
-          "Quadro negro ⬛"
+          "A união e associação de tradições e divindades de diferentes religiões (como a ligação entre Iemanjá e Nossa Senhora dos Navegantes) 🕊️🌊",
+          "Uma competição de quem corre mais rápido 🏃",
+          "Um tipo de instrumento de corda 🎸",
+          "O estudo dos vulcões no fundo do oceano 🌋"
         ],
         correct: 0,
-        hint: "É aquela esfera giratória que costuma ter na sala de aula de geografia!",
-        explanation: "O Globo Terrestre é a melhor representação da forma da Terra porque ele também é esférico e pode girar!",
-        icon: "🌐"
+        hint: "Para poder manter sua fé no período colonial, os escravizados associavam os orixás aos santos católicos.",
+        explanation: "O sincretismo religioso permitiu que a cultura africana preservasse suas raízes e homenageasse divindades como Iemanjá em conjunto com celebrações como N. Sra. dos Navegantes.",
+        icon: "🕊️"
       },
       {
-        id: "g5",
-        question: "Quando representamos toda a superfície redonda da Terra desenhada em uma folha plana, temos um:",
+        id: "i5",
+        question: "Nos dias de hoje (imigrações contemporâneas), por que muitas pessoas de outros países vêm morar no Brasil como refugiadas?",
         options: [
-          "Planisfério (ou Mapa-Múndi) 🗺️",
-          "Quebra-cabeça 🧩",
-          "Álbum de figurinhas 📖",
-          "Relógio de areia ⏳"
+          "Buscando segurança e melhores condições de vida, fugindo de guerras, perseguições e graves crises em seus países de origem 🕊️🧳",
+          "Apenas para passar um final de semana na praia e voltar 🏖️",
+          "Porque foram sorteadas em um jogo de videogame 🎮",
+          "Para comprar refrigerante no supermercado 🥤"
         ],
         correct: 0,
-        hint: "Tem 'plano' no nome! Mostra todos os países do mundo abertos na folha.",
-        explanation: "O Planisfério (ou Mapa-Múndi) é o mapa que mostra todo o planeta de forma plana em uma única imagem.",
-        icon: "🗺️"
+        hint: "Pessoas da Venezuela, Haiti, Síria e países africanos buscam acolhimento, paz e recomeço no Brasil.",
+        explanation: "O refúgio é um direito humano fundamental: acolher quem precisa fugir de conflitos, guerras e perseguições para recomeçar com dignidade!",
+        icon: "🧳"
+      }
+    ]
+  },
+  {
+    id: "palavras_sabores",
+    chapter: "Capítulo 6",
+    title: "Tesouro das Palavras, Pratos e Ritmos",
+    subtitle: "Vocabulário Tupi e Africano, Culinária Regional e Danças",
+    icon: "🍲",
+    badge: "Mestre dos Sabores e Ritmos",
+    badgeIcon: "🥁",
+    color: "#2ec4b6",
+    description: "Desvende as palavras de origem tupi e africana, os pratos típicos dos estados e danças como Carimbó e Frevo!",
+    hasMinigame: "palavras",
+    questions: [
+      {
+        id: "ps1",
+        question: "De onde vêm as palavras do nosso dia a dia como PIPOCA, ABACAXI, CATUPIRY e MINGAU?",
+        options: [
+          "Das línguas INDÍGENAS (principalmente do tronco Tupi) 🌽🍍",
+          "Do idioma inglês da América do Norte 🗽",
+          "Do idioma japonês 🍣",
+          "Da língua russa do polo norte 🇷🇺"
+        ],
+        correct: 0,
+        hint: "São nomes de frutas nativas, comidas de milho e mandioca que os primeiros habitantes do Brasil já conheciam!",
+        explanation: "O português falado no Brasil tem milhares de palavras indígenas: abacaxi, pipoca, jacaré, maracujá, tamanduá, caju e mingau!",
+        icon: "🍍"
+      },
+      {
+        id: "ps2",
+        question: "E as palavras muito usadas como CAÇULA (o irmão mais novo), BANGUELA, CAMUNDONGO e FOFOCA, têm qual origem?",
+        options: [
+          "Origem em línguas AFRICANAS (como o Quimbundo e Iorubá) 🗣️🌍",
+          "Origem na Roma Antiga em latim puro 🏛️",
+          "Origem na língua alemã 🥨",
+          "Origem na China 🐉"
+        ],
+        correct: 0,
+        hint: "Foram trazidas pelos africanos que vieram para o Brasil e enriqueceram nosso jeito carinhoso de falar!",
+        explanation: "Palavras como caçula, banguela, camundongo, fofoca, moleque, quitanda e caçamba são heranças africanas no nosso vocabulário!",
+        icon: "🗣️"
+      },
+      {
+        id: "ps3",
+        question: "Relacione o prato típico à sua região/origem: O delicioso ACARAJÉ feito com azeite de dendê é símbolo de qual estado?",
+        options: [
+          "Bahia (culinária de forte herança africana) 🧆🇧🇷",
+          "Rio Grande do Sul (clima frio dos pampas) 🥩",
+          "Acre (fronteira com o Peru) 🌴",
+          "Santa Catarina (colonização alemã) 🥨"
+        ],
+        correct: 0,
+        hint: "As baianas de acarajé com seus vestidos brancos preparam esse bolinho de feijão-fradinho frito no dendê!",
+        explanation: "O acarajé baiano, a moqueca com azeite de dendê e o vatapá são testemunhos vivos e saborosos da herança africana no Brasil.",
+        icon: "🧆"
+      },
+      {
+        id: "ps4",
+        question: "Em qual estado brasileiro o CARIMBÓ, dança de saias rodadas ao som de tambores feitos de troncos, é tradição popular?",
+        options: [
+          "No Pará (Região Norte) 💃🏽🥁",
+          "No Rio Grande do Sul (Região Sul) ❄️",
+          "No Japão 🇯🇵",
+          "Em Portugal 🏰"
+        ],
+        correct: 0,
+        hint: "É uma dança paraense contagiante inspirada nos movimentos dos animais e no som do curimbó (tambor)!",
+        explanation: "O Carimbó nasceu no Pará da mistura de passos indígenas, tambores africanos e influências portuguesas!",
+        icon: "💃"
+      },
+      {
+        id: "ps5",
+        question: "O FREVO, famoso pelos passinhos ágeis e guarda-chuvinhas coloridos, e o MARACATU são ritmos tradicionais de qual estado?",
+        options: [
+          "Pernambuco (Região Nordeste) ☂️🎺",
+          "Goiás (Região Centro-Oeste) 🌾",
+          "Paraná (Região Sul) 🌲",
+          "Roraima (Região Norte) 🏔️"
+        ],
+        correct: 0,
+        hint: "Nas ladeiras históricas de Olinda e nas ruas de Recife, todo mundo pula no ritmo do frevo!",
+        explanation: "O Frevo e o Maracatu são patrimônios culturais de Pernambuco, com muita energia, roupas coloridas e som de trompetes e tambores!",
+        icon: "☂️"
       }
     ]
   }
 ];
 
-// Desafio da Bússola Interativa
-const COMPASS_CHALLENGES = [
+// Minijogo 1: Origem das Brincadeiras Tradicionais (Capítulo 4)
+const GAMES_ORIGIN_CHALLENGES = [
   {
-    instruction: "O galo cantou e o Sol vai nascer! Aponte a bússola para o LESTE (onde o Sol nasce):",
-    target: "L",
-    targetName: "Leste (Nascente)",
-    hint: "O Leste fica do lado direito da Rosa dos Ventos! ☀️"
+    toy: "Pipa (ou Papagaio de papel) 🪁",
+    options: [
+      { name: "China Antiga 🇨🇳", correct: true },
+      { name: "Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿", correct: false },
+      { name: "Austrália 🇦🇺", correct: false }
+    ],
+    hint: "Foi inventada no Oriente há mais de 2.000 anos para sinalizações e depois virou brincadeira no céu!",
+    explanation: "A pipa nasceu na China Antiga, feita de seda e bambu, e hoje voa nos céus do mundo todo!"
   },
   {
-    instruction: "O dia terminou e o Sol vai se pôr no horizonte! Aponte para o OESTE (onde o Sol se põe):",
-    target: "O",
-    targetName: "Oeste (Poente)",
-    hint: "O Oeste fica do lado esquerdo da Rosa dos Ventos! 🌇"
+    toy: "Peteca 🪶",
+    options: [
+      { name: "Indígenas Brasileiros (Tupi) 🏹🇧🇷", correct: true },
+      { name: "França 🇫🇷", correct: false },
+      { name: "Alemanha 🇩🇪", correct: false }
+    ],
+    hint: "A palavra 'pe'teka' em tupi significa bater com a palma da mão!",
+    explanation: "A peteca foi criada pelos povos originários indígenas do Brasil usando palha de milho e penas coloridas!"
   },
   {
-    instruction: "A agulha mágica quer olhar para o topo do mapa! Aponte para o NORTE:",
-    target: "N",
-    targetName: "Norte",
-    hint: "O Norte fica para cima, no topo da Rosa dos Ventos! ❄️"
+    toy: "Pular Corda 🪢",
+    options: [
+      { name: "Grécia e Roma Antiga 🏛️🇬🇷", correct: true },
+      { name: "China Antiga 🇨🇳", correct: false },
+      { name: "Brasil Colonial 🇧🇷", correct: false }
+    ],
+    hint: "Os antigos atletas gregos usavam cordas para treinar saltos e ritmo!",
+    explanation: "Pular corda remonta à Grécia e Roma Antiga e virou uma das brincadeiras mais queridas da infância!"
   },
   {
-    instruction: "Para completar a jornada, aponte a bússola para a direção oposta ao Norte: para o SUL:",
-    target: "S",
-    targetName: "Sul",
-    hint: "O Sul fica para baixo, oposto ao Norte! 🐧"
+    toy: "Amarelinha 🔢",
+    options: [
+      { name: "França 🇫🇷", correct: true },
+      { name: "Japão 🇯🇵", correct: false },
+      { name: "Estados Unidos 🇺🇸", correct: false }
+    ],
+    hint: "Vem da palavra francesa 'marelle', que desenhava um percurso no chão até o 'Céu'!",
+    explanation: "A amarelinha popularizou-se na França e chegou ao Brasil através da Europa, ensinando equilíbrio e números!"
+  },
+  {
+    toy: "Ciranda / Cantigas de Roda ⭕",
+    options: [
+      { name: "Portugal 🇵🇹", correct: true },
+      { name: "Rússia 🇷🇺", correct: false },
+      { name: "Egito 🇪🇬", correct: false }
+    ],
+    hint: "Vieram com os colonizadores portugueses nas caravelas e se misturaram com nossos ritmos!",
+    explanation: "As cantigas de roda como 'Ciranda, Cirandinha' têm fortes raízes nas tradições musicais de Portugal!"
+  },
+  {
+    toy: "Futebol ⚽",
+    options: [
+      { name: "Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿", correct: true },
+      { name: "Grécia 🇬🇷", correct: false },
+      { name: "China 🇨🇳", correct: false }
+    ],
+    hint: "Criado nas escolas inglesas no século XIX e trazido ao Brasil por Charles Miller!",
+    explanation: "O futebol moderno foi regulamentado na Inglaterra e virou paixão nacional e multicultural no Brasil!"
   }
 ];
 
-// Minijogo: Separador de Paisagens (Campo vs Cidade)
-const SORTING_CHALLENGES = [
-  { item: "Trator arando a terra 🚜", category: "campo", explanation: "Tratores trabalham nas plantações do campo!" },
-  { item: "Prédio espelhado de 30 andares 🏢", category: "cidade", explanation: "Grandes prédios e escritórios ficam na cidade." },
-  { item: "Criação de vaquinhas no pasto 🐄", category: "campo", explanation: "A pecuária (criar animais) é típica da zona rural." },
-  { item: "Metrô subterrâneo e muitos carros 🚇", category: "cidade", explanation: "Transporte em massa como metrô é típico de cidades grandes." },
-  { item: "Horta comunitária com alfaces e cenouras 🥕🥬", category: "campo", explanation: "O plantio de hortaliças acontece na terra do campo!" },
-  { item: "Semáforo e faixas de pedestres movimentadas 🚦", category: "cidade", explanation: "Ruas com muito trânsito e semáforos são da cidade." }
+// Minijogo 2: Identificador de Povos e Comunidades Tradicionais (Capítulo 5)
+const PEOPLES_CHALLENGES = [
+  {
+    description: "Povo tradicional que vive no litoral, constrói canoas de madeira e vive da pesca artesanal no mar:",
+    correctTarget: "caiçara",
+    targetName: "Comunidades Caiçaras 🛶🌊",
+    explanation: "Os caiçaras são os guardiões do litoral brasileiro!"
+  },
+  {
+    description: "Povo que mora em casas de palafita à beira dos rios amazônicos e usa barcos para ir à escola e pescar:",
+    correctTarget: "ribeirinho",
+    targetName: "Povos Ribeirinhos 🛖⛵",
+    explanation: "Os ribeirinhos vivem no ritmo das águas e cheias dos rios!"
+  },
+  {
+    description: "Comunidade de resistência e liberdade com posse e uso comunitário da terra (como o Quilombo dos Palmares):",
+    correctTarget: "quilombola",
+    targetName: "Comunidades Quilombolas ✊🏿🛖",
+    explanation: "Os quilombos preservam a memória, a agricultura coletiva e a força afro-brasileira!"
+  },
+  {
+    description: "Trabalhadores da floresta amazônica que colhem o látex da seringueira sem derrubar as árvores:",
+    correctTarget: "seringueiro",
+    targetName: "Seringueiros da Amazônia 🌳🍶",
+    explanation: "Os seringueiros protegem a floresta em pé enquanto extraem a borracha natural!"
+  },
+  {
+    description: "Mais de 305 etnias e 270 línguas no Brasil (como os Guarani e Catuquina), com rica sabedoria da natureza:",
+    correctTarget: "indigena",
+    targetName: "Povos Indígenas 🏹🌿",
+    explanation: "Os povos indígenas são os habitantes originários deste continente!"
+  }
+];
+
+// Minijogo 3: Detetive das Palavras (Tupi vs Africana) - Capítulo 6
+const WORDS_CHALLENGES = [
+  { word: "Pipoca 🌽", origin: "indigena", originName: "Indígena (Tupi)", hint: "Vem de 'pira-poca', que significa pele que estoura!" },
+  { word: "Caçula 👶", origin: "africana", originName: "Africana (Quimbundo)", hint: "Significa o filho mais jovem ou o irmãozinho menor!" },
+  { word: "Abacaxi 🍍", origin: "indigena", originName: "Indígena (Tupi)", hint: "Fruta saborosa e cheirosa ('ibá' = fruto, 'cati' = que cheira bem)!" },
+  { word: "Banguela 🦷", origin: "africana", originName: "Africana", hint: "Palavra de raiz africana para quem perdeu um dentinho de leite!" },
+  { word: "Jacaré 🐊", origin: "indigena", originName: "Indígena (Tupi)", hint: "Animal aquático com nome tupi ('aquele que olha de lado')!" },
+  { word: "Fofoca 🗣️", origin: "africana", originName: "Africana", hint: "Conversa cochichada de matriz cultural africana!" },
+  { word: "Mingau 🥣", origin: "indigena", originName: "Indígena (Tupi)", hint: "Comida cremosa e quentinha de farinha feita pelos indígenas!" },
+  { word: "Camundongo 🐭", origin: "africana", originName: "Africana (Quimbundo)", hint: "Ratinho pequeno batizado por palavras de matriz africana!" }
 ];
